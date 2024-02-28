@@ -1,5 +1,5 @@
 bot:
-  token: 6862547449:AAGgXZX3zkpXYxwkUKEr9Dxis4sC1dYkGKI
+  token: ${BOT_TOKEN}
   message: "Привет! Подключайся к нашему приложению!"
 
 spring:
