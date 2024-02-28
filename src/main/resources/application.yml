@@ -1,0 +1,14 @@
+bot:
+  token: 6862547449:AAGgXZX3zkpXYxwkUKEr9Dxis4sC1dYkGKI
+  message: "Привет! Подключайся к нашему приложению!"
+
+spring:
+  config.import: optional:file:.env[.properties]
+
+logging:
+  level:
+    root: DEBUG
+    okhttp3.*: ERROR
+    org.apache.*: ERROR
+    javax.*: ERROR
+    sun.rmi.*: ERROR
