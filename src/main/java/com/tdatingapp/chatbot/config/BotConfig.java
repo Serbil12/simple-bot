@@ -8,5 +8,5 @@ import lombok.Setter;
 @Setter
 public class BotConfig {
     private String token;
-    private String message;
+    private String welcomeMessage;
 }
