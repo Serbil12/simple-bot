@@ -23,7 +23,11 @@ public class Bot implements TelegramMvcController {
     @BotRequest(value = "/start", type = { MessageType.CALLBACK_QUERY, MessageType.MESSAGE })
     public BaseRequest<?, ?> start(User user, Chat chat) {
         log.info("User {} starts this ChatBot!", user.id());
-        var message = new SendMessage(chat.id(), botConfig.getWelcomeMessage());
+
+        var username = user.firstName() + " " + user.lastName();
+        var text = botConfig.getWelcomeMessage().replaceAll("<username>", username);
+
+        var message = new SendMessage(chat.id(), text);
         message.parseMode(ParseMode.HTML);
 
         return message;

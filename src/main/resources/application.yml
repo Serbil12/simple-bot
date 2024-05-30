@@ -1,6 +1,6 @@
 bot:
   token: ${BOT_TOKEN}
-  welcome-message: "Привет! Подключайся к нашему <a href=\"https://t.me/MintDatingBot/Mint\">приложению!</a>"
+  welcome-message: "Привет <username>! Подключайся к <a href=\"https://t.me/MintDatingBot/Mint\">Mint</a> и найди что-то новое <a>&#128140;</a>"
 
 spring:
   config.import: optional:file:.env[.properties]
