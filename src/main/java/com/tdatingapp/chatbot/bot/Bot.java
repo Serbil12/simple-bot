@@ -10,6 +10,7 @@ import com.pengrad.telegrambot.model.request.ParseMode;
 import com.pengrad.telegrambot.request.BaseRequest;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.tdatingapp.chatbot.config.BotConfig;
+import com.tdatingapp.chatbot.util.TelegramStringUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,8 +25,7 @@ public class Bot implements TelegramMvcController {
     public BaseRequest<?, ?> start(User user, Chat chat) {
         log.info("User {} starts this ChatBot!", user.id());
 
-        var username = user.firstName() + " " + user.lastName();
-        var text = botConfig.getWelcomeMessage().replaceAll("<username>", username);
+        var text = botConfig.getWelcomeMessage().replaceAll("<username>", parseUsername(user));
 
         var message = new SendMessage(chat.id(), text);
         message.parseMode(ParseMode.HTML);
@@ -38,4 +38,17 @@ public class Bot implements TelegramMvcController {
         return botConfig.getToken();
     }
 
+    private static String parseUsername(User user) {
+        String result = "";
+
+        if (!TelegramStringUtils.isEmpty(user.firstName())) {
+            result += " " + user.firstName();
+        }
+
+        if (!TelegramStringUtils.isEmpty(user.lastName())) {
+            result += " " + user.lastName();
+        }
+
+        return result;
+    }
 }
