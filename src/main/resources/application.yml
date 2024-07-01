@@ -2,6 +2,10 @@ bot:
   token: ${BOT_TOKEN}
   welcome-message: "Привет<username>! Подключайся к <a href=\"https://t.me/MintDatingBot/Mint\">Mint</a> и найди что-то новое <a>&#128140;</a>"
 
+server:
+  port: 8081
+  error.whitelabel.enabled: false
+
 spring:
   config.import: optional:file:.env[.properties]
 
