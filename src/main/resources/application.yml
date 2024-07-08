@@ -2,6 +2,9 @@ bot:
   token: ${BOT_TOKEN}
   welcome-message: "Привет<username>! Подключайся к <a href=\"https://t.me/MintDatingBot/Mint\">Mint</a> и найди что-то новое <a>&#128140;</a>"
 
+management.endpoints.web.base-path: /api/actuator
+management.endpoints.web.exposure.include: health,prometheus
+
 server:
   port: 8081
   error.whitelabel.enabled: false
