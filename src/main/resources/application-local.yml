@@ -6,6 +6,7 @@ bot:
 
 management.endpoints.web.base-path: /api/actuator
 management.endpoints.web.exposure.include: health,prometheus
+management.server.port: 8085
 
 server:
   port: 8085
