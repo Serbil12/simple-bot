@@ -1,0 +1,23 @@
+bot:
+  token: ${BOT_TOKEN}
+  welcome-message: "Привет, это <a href=\"https://t.me/mint_datebot/mint\">MINT</a>! 
+  Мы - свежий дейтинг, который развивается благодаря комьюнити! 
+  Именно поэтому у нас нет рекламы и подписок в приложении."
+
+management.endpoints.web.base-path: /api/actuator
+management.endpoints.web.exposure.include: health,prometheus
+
+server:
+  port: 8085
+  error.whitelabel.enabled: false
+
+spring:
+  config.import: optional:file:.env[.properties]
+
+logging:
+  level:
+    root: DEBUG
+    okhttp3.*: ERROR
+    org.apache.*: ERROR
+    javax.*: ERROR
+    sun.rmi.*: ERROR
